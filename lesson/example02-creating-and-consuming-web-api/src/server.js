@@ -1,10 +1,12 @@
 import http from 'node:http';
 import { Readable } from 'node:stream';
 
+import { randomUUID } from 'node:crypto';
+
 function* run() {
   for (let index = 0; index <= 99; index++) {
     const data = {
-      id: index,
+      id: randomUUID(),
       name: `Alex-Andre-${index}`,
       at: Date.now(),
     }
